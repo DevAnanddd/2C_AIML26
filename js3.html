@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function sum(){
+            let a = 10;
+            let b = 20;
+            let c = a + b;
+            document.write("The sum of a and b is: " + c);
+            console.log("The sum of a and b is: " + c);
+        }
+        function info(){
+            let age=parseInt(prompt("Enter your age:"));
+            if (age >=18){
+                let c = confirm(" do you want to sumbit your vote");
+                if(c){
+                    alert("your response submitted");
+                } else{ 
+                    alert("NOT SUBMITTED, THANK YOU");
+                }
+            } else {
+                alert("You are not eligible to vote.");
+            }                                                                                                                               
+        }
+    </script>
+</head>
+<body>
+    <button onclick="sum()">Calculate Sum</button>
+    <button onclick="info()">Check Voting Eligibility</button>
+
+</body>
+</html>
