@@ -5,13 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-                                                                                                                                
-        function F(fn)`
-    </script>
+        function f (fn)
+        {
+            let FN=fn;
+            return FN;
+        }
+        function L (ln)
+        {
+            let LN=ln;
+            return LN;
+        }
+        function Name ()
+        {
+            let firstName=f(prompt("Enter your first name:"));
+            let lastName=L(prompt("Enter your last name:"));
+            document.write("Your full name is: "+firstName+" "+lastName);
+        }
+     </script>
+
 </head>
 <body>
-    <button onclick="sum()">Calculate Sum</button>
-    <button onclick="info()">Check Voting Eligibility</button>
-
+    <input type="button" onclick="Name()" value="display">
+    
 </body>
 </html>
