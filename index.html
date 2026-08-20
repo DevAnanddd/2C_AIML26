@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <script>
+        function validateForm() {
+            let name = document.forms["registrationForm"]["name"].value;
+            let email = document.forms["registrationForm"]["email"].value;
+            let password = document.forms["registrationForm"]["password"].value;
+            let reEnterPassword = document.forms["registrationForm"]["re-enter-password"].value;
+            let phone = document.forms["registrationForm"]["phone"].value;
+            if (name == "" || email == "" || password == "" || reEnterPassword == "" || phone == "") {
+                alert("All fields must be filled out");
+                return false;
+            }
+            if (!email.includes("@")) {
+                alert("Please enter a valid email address");
+                return false;
+            }
+            if (password != reEnterPassword) {
+                alert("Passwords do not match");
+                return false;
+            }
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters long");
+                return false;
+            }
+            if (phone.length < 10) {
+                alert("Please enter a valid phone number");
+                return false;
+            }
+            if (!/^\d+$/.test(phone)) {
+                alert("Phone number must contain only digits");
+                return false;
+            }
+            if (!/^[a-zA-Z]+(?: [a-zA-Z]+)*$/.test(name)) {
+                alert("Name must contain only letters and spaces");
+                return false;
+            }
+            if(phone.length > 10) {
+                alert("Phone number must be 10 digits long");
+                return false;
+            }
+            alert("Registration successful!");
+            return false;
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Registration Form</h2>
+    <form name="registrationForm" onsubmit="return validateForm()">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" name="email"><br><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br><br>
+        <label for="re-enter-password">Re-enter Password:</label><br>
+        <input type="password" id="re-enter-password" name="re-enter-password"><br><br>
+        <label for="phone">Phone:</label><br>
+        <input type="text" id="phone" name="phone"><br><br>
+        <input type="submit" value="Register">
+
+    </form>
+    
+</body>
+</html>
