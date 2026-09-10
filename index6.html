@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Information</title>
+    <script>
+let product = {
+        productId: "P101",
+        productName: "Wireless Headphones",
+        price: 1499,
+        quantity: 2,
+
+        calculateTotalPrice: function() {
+         return this.price * this.quantity;
+            }
+        };
+function displayProductInformation() {
+
+document.getElementById("productDetails").innerHTML =
+        "<p><b>Product ID:</b> " + product.productId + "</p>" +
+        "<p><b>Product Name:</b> " + product.productName + "</p>" +
+         "<p><b>Price:</b> ₹" + product.price + "</p>" +
+         "<p><b>Quantity:</b> " + product.quantity + "</p>" +
+         "<p><b>Total Price:</b> ₹" + product.calculateTotalPrice() + "</p>";
+        }
+function updateProduct() {
+let newQuantity = document.getElementById("quantity").value;
+product.quantity = newQuantity;
+displayProductInformation();
+ }
+   </script>
+</head>
+<body>
+
+    <h1>Product Information</h1>
+    <div id="productDetails"></div>
+    <br>
+
+    <label>Update Quantity:</label>
+    <input type="number" id="quantity" value="2">
+    <button onclick="updateProduct()">Update Quantity</button>
+
+    <script>
+        displayProductInformation();
+    </script>
+
+</body>
+</html>
