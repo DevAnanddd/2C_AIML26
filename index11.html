@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class student{
+
+            static name="dev";
+ 
+            constructor(name){
+                this.name=name;
+                console.log(this.name);
+            }
+
+            info(){
+                console.log(this.name);
+            }
+
+            static display(){
+                console.log(student.name);
+            }
+
+        };
+
+        let s1=new student();
+        let s2=new student("vikas");
+
+        s1.info();
+        student.display();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
