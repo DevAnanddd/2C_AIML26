@@ -14,20 +14,24 @@
         this.rollno=rollno;
         this.marks=marks;
 
+
+
         student.totalstudent++;
     }
+
 
     displayresult(){
         console.log("your name is: ",this.name);
         console.log("your roll number: ", this.rollno);
         console.log("your marks: ",this.marks);
 
+        console.log("___________________________________________________________");
 
         if(this.marks>= 33){
-            console.log("you are passed ");
+            console.log("you are passed mooj le. ");
         }
         else{
-            console.log("your are failed");
+            console.log("your are fail chl nikll le av.");
         }
 
     }
@@ -38,16 +42,18 @@
     
 }
 
-let student1= new student(61,"dev", 99);
-let student2 = new student(12,"adrs", 21);
-let student3 = new student(77,"ok", 51);
-let student4 = new student(33,"bij", 34);
+let student1= new student(21,"Naman sharma", 99);
+let student2 = new student(22,"Naina sharma", 10);
 
 
 student1.displayresult();
 student2.displayresult();
 
 student.displaytotalstudent();
+
+
+
+
 
 
     </script>
