@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Vehicle {
+                constructor(vehicleNo, driverName, distance) {
+                    this.vehicleNo = vehicleNo;
+                    this.driverName = driverName;
+                    this.distance = distance;
+                }
+
+    calculateFare() {
+        return 0;
+    }
+
+    static platformName() {
+        console.log("Booking Platform: Raja Cabs");
+    }
+}
+
+class Car extends Vehicle {
+    constructor(vehicleNo, driverName, distance) {
+        super(vehicleNo, driverName, distance);
+    }
+
+    calculateFare() {
+        return this.distance * 15;
+    }
+}
+
+class Bike extends Vehicle {
+    constructor(vehicleNo, driverName, distance) {
+        super(vehicleNo, driverName, distance);
+    }
+
+    calculateFare() {
+        return this.distance * 8;
+    }
+}
+
+Vehicle.platformName();
+
+let car = new Car("CAR101", "Amit", 20);
+let bike = new Bike("BIKE101", "Rahul", 20);
+
+console.log("Car Fare:", car.calculateFare());
+console.log("Bike Fare:", bike.calculateFare());
+
+</script>
+</head>
+<body>
+    
+</body>
+</html>

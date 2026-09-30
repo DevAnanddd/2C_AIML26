@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>E-Commerce Product System</title>
+</head>
+<body>
+
+<script>
+
+class Product {
+    constructor(productId, productName, price) {
+        this.productId = productId;
+        this.productName = productName;
+        this.price = price;
+    }
+
+    getDiscountedPrice(discount) {
+        return this.price - (this.price * discount / 100);
+    }
+
+    static compareProducts(p1, p2) {
+        return p1.price > p2.price ? p1 : p2;
+    }
+
+    display() {
+        document.write("ID: " + this.productId + "<br>");
+        document.write("Name: " + this.productName + "<br>");
+        document.write("Price: ₹" + this.price + "<br>");
+    }
+}
+
+class Electronics extends Product {
+    constructor(productId, productName, price, warranty) {
+        super(productId, productName, price);
+        this.warranty = warranty;
+    }
+
+    display() {
+        document.write("ID: " + this.productId + "<br>");
+        document.write("Name: " + this.productName + "<br>");
+        document.write("Price: ₹" + this.price + "<br>");
+        document.write("Warranty: " + this.warranty + " years<br>");
+    }
+}
+
+let p1 = new Product(101, "Laptop", 60000);
+let p2 = new Product(102, "Mobile", 30000);
+
+p1.display();
+
+document.write("<br>Discounted Price: ₹" + p1.getDiscountedPrice(10));
+
+let expensive = Product.compareProducts(p1, p2);
+
+document.write("<br><br>Higher Price Product: " + expensive.productName);
+
+let e1 = new Electronics(103, "TV", 50000, 2);
+
+document.write("<br><br>");
+e1.display();
+
+</script>
+
+</body>
+</html>
